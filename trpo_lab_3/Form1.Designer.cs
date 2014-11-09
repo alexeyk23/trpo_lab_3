@@ -33,9 +33,9 @@
             this.txbxStrSource = new System.Windows.Forms.TextBox();
             this.txbxSubstr = new System.Windows.Forms.TextBox();
             this.grpAlgo = new System.Windows.Forms.GroupBox();
-            this.rbSimple = new System.Windows.Forms.RadioButton();
-            this.rbBayerM = new System.Windows.Forms.RadioButton();
             this.rbKMP = new System.Windows.Forms.RadioButton();
+            this.rbBayerM = new System.Windows.Forms.RadioButton();
+            this.rbSimple = new System.Windows.Forms.RadioButton();
             this.dgvRes = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,17 +94,16 @@
             this.grpAlgo.TabStop = false;
             this.grpAlgo.Text = "Алгоритмы";
             // 
-            // rbSimple
+            // rbKMP
             // 
-            this.rbSimple.AutoSize = true;
-            this.rbSimple.Checked = true;
-            this.rbSimple.Location = new System.Drawing.Point(7, 20);
-            this.rbSimple.Name = "rbSimple";
-            this.rbSimple.Size = new System.Drawing.Size(80, 17);
-            this.rbSimple.TabIndex = 0;
-            this.rbSimple.TabStop = true;
-            this.rbSimple.Text = "1. Простой";
-            this.rbSimple.UseVisualStyleBackColor = true;
+            this.rbKMP.AutoSize = true;
+            this.rbKMP.Location = new System.Drawing.Point(6, 78);
+            this.rbKMP.Name = "rbKMP";
+            this.rbKMP.Size = new System.Drawing.Size(153, 17);
+            this.rbKMP.TabIndex = 2;
+            this.rbKMP.TabStop = true;
+            this.rbKMP.Text = "3. Кнута-Морриса-Пратта";
+            this.rbKMP.UseVisualStyleBackColor = true;
             // 
             // rbBayerM
             // 
@@ -117,16 +116,17 @@
             this.rbBayerM.Text = "2. Бауэра-Мура";
             this.rbBayerM.UseVisualStyleBackColor = true;
             // 
-            // rbKMP
+            // rbSimple
             // 
-            this.rbKMP.AutoSize = true;
-            this.rbKMP.Location = new System.Drawing.Point(6, 78);
-            this.rbKMP.Name = "rbKMP";
-            this.rbKMP.Size = new System.Drawing.Size(153, 17);
-            this.rbKMP.TabIndex = 2;
-            this.rbKMP.TabStop = true;
-            this.rbKMP.Text = "3. Кнута-Морриса-Пратта";
-            this.rbKMP.UseVisualStyleBackColor = true;
+            this.rbSimple.AutoSize = true;
+            this.rbSimple.Checked = true;
+            this.rbSimple.Location = new System.Drawing.Point(7, 20);
+            this.rbSimple.Name = "rbSimple";
+            this.rbSimple.Size = new System.Drawing.Size(80, 17);
+            this.rbSimple.TabIndex = 0;
+            this.rbSimple.TabStop = true;
+            this.rbSimple.Text = "1. Простой";
+            this.rbSimple.UseVisualStyleBackColor = true;
             // 
             // dgvRes
             // 
@@ -141,7 +141,7 @@
             this.dgvRes.Location = new System.Drawing.Point(248, 131);
             this.dgvRes.Name = "dgvRes";
             this.dgvRes.ReadOnly = true;
-            this.dgvRes.Size = new System.Drawing.Size(344, 150);
+            this.dgvRes.Size = new System.Drawing.Size(344, 105);
             this.dgvRes.TabIndex = 5;
             // 
             // Column1
@@ -164,7 +164,7 @@
             // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(15, 242);
+            this.btnGo.Location = new System.Drawing.Point(141, 242);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(101, 39);
             this.btnGo.TabIndex = 6;
@@ -180,6 +180,7 @@
             this.btnClearSubstr.TabIndex = 7;
             this.btnClearSubstr.Text = "Очистить";
             this.btnClearSubstr.UseVisualStyleBackColor = true;
+            this.btnClearSubstr.Click += new System.EventHandler(this.btnClearSubstr_Click);
             // 
             // btnClearStr
             // 
@@ -189,15 +190,17 @@
             this.btnClearStr.TabIndex = 8;
             this.btnClearStr.Text = "Очистить";
             this.btnClearStr.UseVisualStyleBackColor = true;
+            this.btnClearStr.Click += new System.EventHandler(this.btnClearStr_Click);
             // 
             // btnClearRes
             // 
-            this.btnClearRes.Location = new System.Drawing.Point(141, 242);
+            this.btnClearRes.Location = new System.Drawing.Point(491, 242);
             this.btnClearRes.Name = "btnClearRes";
             this.btnClearRes.Size = new System.Drawing.Size(101, 39);
             this.btnClearRes.TabIndex = 9;
             this.btnClearRes.Text = "Очистить результатты";
             this.btnClearRes.UseVisualStyleBackColor = true;
+            this.btnClearRes.Click += new System.EventHandler(this.btnClearRes_Click);
             // 
             // frmMain
             // 

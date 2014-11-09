@@ -44,7 +44,8 @@ namespace trpo_lab_3
                 }
                 else
                     {
- 
+                        KMP();
+                        printRes(3);
                     }
         }
         private void simple()
@@ -122,6 +123,68 @@ namespace trpo_lab_3
                findIndex= indexSource + 1;               
             }
 
+        }
+
+        private void KMP()
+        {   countCompare = 0; 
+            countShift = 0;
+            findIndex = -1;
+            string source = txbxStrSource.Text.Trim();
+            string substr = txbxSubstr.Text.Trim();
+            int[] prefix = new int[source.Length];
+            int k = 0;
+            //построение префикс функции
+            for (int i = 1; i < substr.Length; i++)
+            {
+                k = prefix[i - 1];
+                while (k > 0 && substr[i] != substr[k])
+                {
+                    k = prefix[k - 1];
+                    countCompare++;
+                }
+                if (substr[i] == substr[k])
+                    k++;
+                prefix[i] = k;
+            }
+            k = 0;
+            for (int i = 0; i < source.Length; i++)
+            {
+                while (k>0 && substr[k]!=source[i]) 
+                {
+                    k = prefix[k - 1];
+                    countCompare++;                  
+                }
+                if (substr[k] == source[i])
+                {
+                    k++;
+                    countShift++;
+                    countCompare++;
+                }
+                if (k == substr.Length)
+                {
+                    findIndex = i - substr.Length + 2;
+                    break;
+                }
+            }
+        }
+
+        private void btnClearRes_Click(object sender, EventArgs e)
+        {
+            dgvRes.Rows.Clear();
+            for (int i = 0; i < 3; i++)
+            {
+                dgvRes.Rows.Add();
+            }     
+        }
+
+        private void btnClearSubstr_Click(object sender, EventArgs e)
+        {
+            txbxSubstr.Text = "";
+        }
+
+        private void btnClearStr_Click(object sender, EventArgs e)
+        {
+            txbxStrSource.Text = "";
         }
     }
 }
