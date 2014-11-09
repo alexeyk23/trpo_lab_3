@@ -1,0 +1,8 @@
+C:\Users\admin\Documents\Visual Studio 2012\Projects\trpo_lab_3\trpo_lab_3\bin\Debug\trpo_lab_3.exe
+C:\Users\admin\Documents\Visual Studio 2012\Projects\trpo_lab_3\trpo_lab_3\bin\Debug\trpo_lab_3.pdb
+C:\Users\admin\Documents\Visual Studio 2012\Projects\trpo_lab_3\trpo_lab_3\obj\Debug\trpo_lab_3.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\Visual Studio 2012\Projects\trpo_lab_3\trpo_lab_3\obj\Debug\trpo_lab_3.frmMain.resources
+C:\Users\admin\Documents\Visual Studio 2012\Projects\trpo_lab_3\trpo_lab_3\obj\Debug\trpo_lab_3.Properties.Resources.resources
+C:\Users\admin\Documents\Visual Studio 2012\Projects\trpo_lab_3\trpo_lab_3\obj\Debug\trpo_lab_3.csproj.GenerateResource.Cache
+C:\Users\admin\Documents\Visual Studio 2012\Projects\trpo_lab_3\trpo_lab_3\obj\Debug\trpo_lab_3.exe
+C:\Users\admin\Documents\Visual Studio 2012\Projects\trpo_lab_3\trpo_lab_3\obj\Debug\trpo_lab_3.pdb
