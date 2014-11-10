@@ -112,7 +112,7 @@ namespace trpo_lab_3
                     if (indexSubstr == substr.Length) // сдвиг по таблице сдвигов соответствующего символа
                         indexSource += shiftTable[source[indexSource - 1]];
                     else
-                        indexSource += substr.Length - indexSubstr + 1;
+                        indexSource += substr.Length - indexSubstr + 1; //сдвигаем хороший суффикс (на столько, сколько проверили т.е. на его длину)
                     indexSubstr = substr.Length;
                     countShift++;
                 }
@@ -131,7 +131,7 @@ namespace trpo_lab_3
             findIndex = -1;
             string source = txbxStrSource.Text.Trim();
             string substr = txbxSubstr.Text.Trim();
-            int[] prefix = new int[source.Length];
+            int[] prefix = new int[substr.Length];
             int k = 0;
             //построение префикс функции
             for (int i = 1; i < substr.Length; i++)
@@ -146,6 +146,7 @@ namespace trpo_lab_3
                     k++;
                 prefix[i] = k;
             }
+
             k = 0;
             for (int i = 0; i < source.Length; i++)
             {
@@ -157,12 +158,12 @@ namespace trpo_lab_3
                 if (substr[k] == source[i])
                 {
                     k++;
-                    countShift++;
                     countCompare++;
                 }
                 if (k == substr.Length)
-                {
+                {                    
                     findIndex = i - substr.Length + 2;
+                    countShift = findIndex;
                     break;
                 }
             }
