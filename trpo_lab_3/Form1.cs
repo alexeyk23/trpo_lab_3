@@ -16,8 +16,9 @@ namespace trpo_lab_3
             for (int i = 0; i < 3; i++)
             {
                 dgvRes.Rows.Add();
-            }           
-            
+            }
+            txbxStrSource.Focus();
+            AcceptButton = btnGo;
         }
 
         int countCompare=0, countShift=0, findIndex=0;
@@ -66,7 +67,7 @@ namespace trpo_lab_3
                         find = false;
                     countCompare++;
                 }
-                countShift = i + 1;
+                countShift = i ;
                 if (find)
                 {
                     findIndex = i+1;                   
@@ -152,18 +153,20 @@ namespace trpo_lab_3
             {
                 while (k>0 && substr[k]!=source[i]) 
                 {
-                    k = prefix[k - 1];
-                    countCompare++;                  
+                    k = prefix[k - 1];                   
+                    countShift++;
+                    countCompare++;
                 }
                 if (substr[k] == source[i])
                 {
                     k++;
-                    countCompare++;
+                    
                 }
+                countCompare++;
                 if (k == substr.Length)
                 {                    
                     findIndex = i - substr.Length + 2;
-                    countShift = findIndex;
+                    
                     break;
                 }
             }
@@ -181,11 +184,13 @@ namespace trpo_lab_3
         private void btnClearSubstr_Click(object sender, EventArgs e)
         {
             txbxSubstr.Text = "";
+            txbxSubstr.Focus();
         }
 
         private void btnClearStr_Click(object sender, EventArgs e)
         {
             txbxStrSource.Text = "";
+            txbxStrSource.Focus();
         }
     }
 }
